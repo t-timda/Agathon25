@@ -25,7 +25,7 @@ function App() {
         <Route path="/MyPage" element={<MyPage />} />
         <Route path="/ContractGuide" element={<ContractGuide />} />
         <Route path="/Benefits" element={<Benefits />} />
-        <Route path="/auth/callback" element={<KakaoRedirect />} />
+        <Route path="/KakaoRedirect" element={<KakaoRedirect />} />
         <Route path="/propertydeatil" element={<PropertyDetail />} />
       </Route>
     </Routes>
