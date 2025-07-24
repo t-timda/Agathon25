@@ -4,7 +4,7 @@ import kakaoLogo from '../assets/kakao_logo.png';
 const Login = () => {
       const handleLogin = () => {
         window.location.href =
-          'https://mutsamarket.store/oauth2/authorization/kakao';
+          '......'; // 추후 url 수정 _ kakao 로그인 api 추가
       };
     
     return (<main className="flex flex-col items-center justify-center h-full flex-1 bg-white">
