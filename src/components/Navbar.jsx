@@ -64,6 +64,15 @@ export default function Navbar() {
         >
           매물선택
         </button>
+        {/*추후삭제*/}
+        <button
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 font-semibold"
+          onClick={() => {
+            navigate("/ContractGuide");
+          }}
+        >
+          계약가이드
+        </button>
       </div>
     </nav>
   );
