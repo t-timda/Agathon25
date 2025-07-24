@@ -21,7 +21,7 @@ export default function Navbar() {
     <nav className="w-full h-16 flex items-center justify-between px-8 bg-white shadow">
       {/* 왼쪽: 웹페이지 제목 */}
       <div
-        className="font-bold text-xl text-blue-600 cursor-pointer"
+        className="font-bold text-xl text-[#0089E1] cursor-pointer"
         onClick={() => navigate("/main")}
       >
         MyPo

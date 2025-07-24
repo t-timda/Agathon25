@@ -4,7 +4,7 @@ import Step from "../components/Step";
 const Benefits = () => {
   return (
     <>
-      <div className="flex justify-between">
+      <div className="flex justify-between m-[30px]">
         <div className="text-[36px] font-bold"></div>
         <Step step="혜택선택" />
       </div>
