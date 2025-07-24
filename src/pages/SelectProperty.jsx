@@ -1,9 +1,21 @@
 import PropertyCard from "../components/PropertyCard";
+import Step from "../components/Step";
 
 const SelectProperty = () => {
   return (
     <>
-      <div className="relative">
+      <div className="flex justify-between m-[20px] px-[50px]">
+        <div className="text-[36px] font-bold">
+          홍익님의 조건에 맞는 4건의 매물
+        </div>
+
+        <div className="">
+          <Step step="매물선택" />
+        </div>
+      </div>
+
+      {/*카드 컴포넌트 스크롤 */}
+      <div className="relative h-full mt-[50px]">
         <div
           id="cardSlider"
           className="flex overflow-x-auto scroll-smooth gap-[30px] px-[30px] scrollbar-hide"
@@ -16,12 +28,13 @@ const SelectProperty = () => {
           </>
         </div>
       </div>
+
       {/* 왼쪽 버튼 */}
       <button
         onClick={() => {
           document.getElementById("cardSlider").scrollLeft -= 300;
         }}
-        className="absolute top-1/2 left-2 -translate-y-1/2 p-2 w-[50px] h-[50px]"
+        className="absolute top-[40%] left-2 -translate-y-1/2 p-2 w-[50px] h-[50px]"
       >
         <img
           src="../src/assets/angle-left.svg"
