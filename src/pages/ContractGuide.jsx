@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Step from "../components/Step";
 import blindeImg from "../assets/blinde.png";
 import step4Img from "../assets/Step4.png";
+import { useNavigate } from 'react-router-dom';
 
 const stepContents = [
   // Step 1: 커스텀 JSX로 대체
@@ -13,6 +14,11 @@ const stepContents = [
 ];
 
 export default function ContractGuide() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/Benefits'); // 경로는 Route에서 설정한 경로와 일치해야 함
+  };
   const [selectedStep, setSelectedStep] = useState(1);
 
   return (
@@ -276,9 +282,12 @@ export default function ContractGuide() {
               </div>
             </div>
             <div className="flex justify-end mt-8">
-              <button className="px-6 py-2 bg-[#0089E1] text-white font-bold rounded-lg hover:bg-blue-700 transition-colors text-base shadow">
-                계약 관리 완료
-              </button>
+            <button
+      className="px-6 py-2 bg-[#0089E1] text-white font-bold rounded-lg hover:bg-blue-700 transition-colors text-base shadow"
+      onClick={handleClick}
+    >
+      계약 관리 완료
+    </button>
             </div>
           </div>
         ) : (
