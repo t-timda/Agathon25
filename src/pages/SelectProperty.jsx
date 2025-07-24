@@ -1,7 +1,24 @@
 import PropertyCard from "../components/PropertyCard";
 import Step from "../components/Step";
+import { fetchAllProperties } from "../apis/property";
+import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const SelectProperty = ({ user, count }) => {
+  const [property, setProperty] = useState(null);
+
+  useEffect(() => {
+    const getProperty = async () => {
+      try {
+        const items = await fetchAllProperties();
+        setProperty(items[0]);
+      } catch (err) {
+        console.error("불러오기 실패", err);
+      }
+    };
+    getProperty();
+  }, []);
+
   return (
     <>
       <div className="flex justify-between m-[20px] px-[50px]">
@@ -15,16 +32,22 @@ const SelectProperty = ({ user, count }) => {
       </div>
 
       {/*카드 컴포넌트 스크롤 */}
-      <div className="relative h-full mb-[50px]">
+      <div>
         <div
           id="cardSlider"
           className="flex overflow-x-auto scroll-smooth gap-[30px] px-[50px] scrollbar-hide"
         >
           <>
-            <PropertyCard name="마포" />
-            <PropertyCard name="상수" />
-            <PropertyCard name="연남" />
-            <PropertyCard name="망원" />
+            <PropertyCard
+              name={property.title}
+              description={property.description}
+              price={property.deposits}
+            />
+            <PropertyCard name="상수" description={"최고"} price={"1억 5천"} />
+
+            <PropertyCard name="상수" description={"최고"} price={"1억 5천"} />
+            <PropertyCard name="연남" description={"대박"} price={"2억"} />
+            <PropertyCard name="망원" description={"야호"} price={"1억"} />
           </>
         </div>
       </div>

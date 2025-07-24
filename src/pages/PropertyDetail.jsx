@@ -1,15 +1,9 @@
 import Step from "../components/Step";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import Modal from "../components/Modal";
 
 const PropertyDetail = ({ id, user }) => {
   const nav = useNavigate();
-  const [showAutoCloseModal, setShowAutoCloseModal] = useState(false);
-  const handleTourClick = () => {
-    setShowAutoCloseModal(true);
-  };
 
   return (
     <div className=" m-[20px] px-[50px]">

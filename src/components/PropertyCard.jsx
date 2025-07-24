@@ -10,8 +10,12 @@ const PropertyCard = ({ name, description, price }) => {
   return (
     <>
       <div className="bg-white shadow-lg shadow-neutral-300 min-w-[400px] h-[600px] rounded-[30px] flex flex-col justify-between pb-[10px]">
-        <div>매물 카드</div>
-        <div>{name}</div>
+        <div>
+          <div>매물 카드</div>
+          <div>{name}</div>
+          <div>{description}</div>
+          <div>{price}</div>
+        </div>
         <div className="flex justify-center mt-4">
           <Button
             text={"자세히 보기"}

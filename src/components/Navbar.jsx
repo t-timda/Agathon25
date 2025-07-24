@@ -31,25 +31,25 @@ export default function Navbar() {
       <div className="flex space-x-16">
         <button
           onClick={() => navigate("/Introduction")}
-          className="bg-transparent text-gray-700 hover:text-blue-600 font-medium"
+          className="bg-transparent text-gray-700 hover:text-[#0089E1] font-medium"
         >
           서비스 소개
         </button>
         <button
           onClick={() => navigate("/Announcement")}
-          className="bg-transparent text-gray-700 hover:text-blue-600 font-medium"
+          className="bg-transparent text-gray-700 hover:text-[#0089E1] font-medium"
         >
           공지사항
         </button>
         <button
           onClick={() => navigate("/MapoNews")}
-          className="bg-transparent text-gray-700 hover:text-blue-600 font-medium"
+          className="bg-transparent text-gray-700 hover:text-[#0089E1] font-medium"
         >
           마포 소식
         </button>
         <button
           onClick={() => navigate("/MyPage")}
-          className="bg-transparent text-gray-700 hover:text-blue-600 font-medium"
+          className="bg-transparent text-gray-700 hover:text-[#0089E1] font-medium"
         >
           마이페이지
         </button>
