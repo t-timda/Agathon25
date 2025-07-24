@@ -10,6 +10,8 @@ import MyPage from './pages/MyPage.jsx'
 import KakaoRedirect from './pages/KakaoRedirect.jsx';
 import PropertyDetail from "./pages/PropertyDetail.jsx";
 
+import ContractGuide from './pages/ContractGuide.jsx';
+
 function App() {
   return (
     <Routes>
@@ -21,6 +23,7 @@ function App() {
         <Route path="/Announcement" element={<Announcement />} />
         <Route path="/MapoNews" element={<MapoNews />} />
         <Route path="/MyPage" element={<MyPage />} />
+        <Route path="/ContractGuide" element={<ContractGuide />} />
         <Route path="/auth/callback" element={<KakaoRedirect />} />
         <Route path="/propertydeatil" element={<PropertyDetail />} />
       </Route>
