@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
-const PropertyCard = ({ name, description, price }) => {
+const PropertyCard = ({ name, description, deposits, mRent }) => {
   const nav = useNavigate();
   const handleClick = () => {
     nav("/propertydeatil");
@@ -13,8 +13,10 @@ const PropertyCard = ({ name, description, price }) => {
         <div>
           <div>매물 카드</div>
           <div>{name}</div>
-          <div>{description}</div>
-          <div>{price}</div>
+          <div>상세 정보 : {description}</div>
+          <div>
+            보증금 : {deposits} / 월세 : {mRent}
+          </div>
         </div>
         <div className="flex justify-center mt-4">
           <Button

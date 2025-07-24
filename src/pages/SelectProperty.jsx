@@ -5,13 +5,13 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const SelectProperty = ({ user, count }) => {
-  const [property, setProperty] = useState(null);
+  const [property, setProperty] = useState([]);
 
   useEffect(() => {
     const getProperty = async () => {
       try {
         const items = await fetchAllProperties();
-        setProperty(items[0]);
+        setProperty(items.data.listings);
       } catch (err) {
         console.error("불러오기 실패", err);
       }
@@ -37,18 +37,13 @@ const SelectProperty = ({ user, count }) => {
           id="cardSlider"
           className="flex overflow-x-auto scroll-smooth gap-[30px] px-[50px] scrollbar-hide"
         >
-          <>
+          {property.map((items) => (
             <PropertyCard
-              name={property.title}
-              description={property.description}
-              price={property.deposits}
+              description={items.description}
+              deposits={items.deposits}
+              mRent={items.monthlyRent}
             />
-            <PropertyCard name="상수" description={"최고"} price={"1억 5천"} />
-
-            <PropertyCard name="상수" description={"최고"} price={"1억 5천"} />
-            <PropertyCard name="연남" description={"대박"} price={"2억"} />
-            <PropertyCard name="망원" description={"야호"} price={"1억"} />
-          </>
+          ))}
         </div>
       </div>
 
