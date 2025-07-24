@@ -1,20 +1,25 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
 
-export default function Navbar() {
-  const navigate = useNavigate();
+const Navbar = () => {
   return (
-    <nav className="w-full h-16 flex justify-between items-center px-10 bg-sky-400 text-white shadow-md fixed top-0 left-0 right-0 z-50">
-      <span className="text-2xl font-bold tracking-tight text-white">
-        MyPo
-      </span>
-      <span
-        onClick={() => navigate("/main")}
-        className="hover:text-yellow-300 transition flex items-center space-x-2 cursor-pointer"
-      >
-        <img alt="관련 이미지" className="w-6 h-6" />
-        <span className="text-white">메인페이지</span>
-      </span>
+    <nav className="w-full h-16 flex items-center justify-between px-8 bg-white shadow">
+      {/* 왼쪽: 웹페이지 제목 */}
+      <div className="font-bold text-xl text-blue-600">MyPo</div>
+
+      {/* 중간: 네비게이션 메뉴 */}
+      <div className="flex space-x-16">
+        <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">서비스 소개</a>
+        <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">공지사항</a>
+        <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">마포 소식</a>
+        <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">마이페이지</a>
+      </div>
+
+      {/* 오른쪽: 로그인 버튼 */}
+      <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 font-semibold">
+        로그인
+      </button>
     </nav>
   );
-}
+};
+
+export default Navbar;
