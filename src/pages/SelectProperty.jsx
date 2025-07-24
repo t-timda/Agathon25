@@ -9,16 +9,16 @@ const SelectProperty = () => {
           홍익님의 조건에 맞는 4건의 매물
         </div>
 
-        <div className="">
+        <div>
           <Step step="매물선택" />
         </div>
       </div>
 
       {/*카드 컴포넌트 스크롤 */}
-      <div className="relative h-full mt-[50px]">
+      <div className="relative h-full mb-[50px]">
         <div
           id="cardSlider"
-          className="flex overflow-x-auto scroll-smooth gap-[30px] px-[30px] scrollbar-hide"
+          className="flex overflow-x-auto scroll-smooth gap-[30px] px-[50px] scrollbar-hide"
         >
           <>
             <PropertyCard name="마포" />

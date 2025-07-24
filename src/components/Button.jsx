@@ -1,15 +1,17 @@
 const Button = ({
   onClick,
   text,
-  className = "",
+  className = "bg-[#0089E1] rounded-[50px] px-[20px] py-[5px] text-white font-bold w-[220px] h-[50px]",
   disabled = false,
-  variant = "main",
+  variant = "",
 }) => {
   const baseStyle = "flex items-center justify-center font-Inter ";
 
   const variantStyles = {
-    main: "bg-[] w-[px] h-[px]",
-    signIn: `${disabled ? "bg-[]" : "bg-[]"} w-full h-[px]`,
+    findMyPo: "w-[240px] h-[90px]",
+    detaillook: "",
+    check: "",
+    other: "bg-[#d4d4d4] text-black",
   };
 
   return (
