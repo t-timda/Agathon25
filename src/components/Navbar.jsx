@@ -21,7 +21,7 @@ export default function Navbar() {
     <nav className="w-full h-16 flex items-center justify-between px-8 bg-white shadow">
       {/* 왼쪽: 웹페이지 제목 */}
       <div
-        className="font-bold text-xl text-blue-600 cursor-pointer"
+        className="font-bold text-xl text-[#0089E1] cursor-pointer"
         onClick={() => navigate("/main")}
       >
         MyPo
@@ -31,25 +31,25 @@ export default function Navbar() {
       <div className="flex space-x-16">
         <button
           onClick={() => navigate("/Introduction")}
-          className="bg-transparent text-gray-700 hover:text-blue-600 font-medium"
+          className="bg-transparent text-gray-700 hover:text-[#0089E1] font-medium"
         >
           서비스 소개
         </button>
         <button
           onClick={() => navigate("/Announcement")}
-          className="bg-transparent text-gray-700 hover:text-blue-600 font-medium"
+          className="bg-transparent text-gray-700 hover:text-[#0089E1] font-medium"
         >
           공지사항
         </button>
         <button
           onClick={() => navigate("/MapoNews")}
-          className="bg-transparent text-gray-700 hover:text-blue-600 font-medium"
+          className="bg-transparent text-gray-700 hover:text-[#0089E1] font-medium"
         >
           마포 소식
         </button>
         <button
           onClick={() => navigate("/MyPage")}
-          className="bg-transparent text-gray-700 hover:text-blue-600 font-medium"
+          className="bg-transparent text-gray-700 hover:text-[#0089E1] font-medium"
         >
           마이페이지
         </button>

@@ -1,7 +1,7 @@
 const Button = ({
   onClick,
   text,
-  className = "bg-[#0089E1] rounded-[50px] px-[20px] py-[5px] text-white font-bold w-[220px] h-[50px] ",
+  className = "bg-[#0089E1] rounded-[50px] px-[20px] py-[5px] text-white font-bold w-[220px] h-[50px] hover:cursor-pointer hover:shadow-md ",
   disabled = false,
   variant = "",
 }) => {

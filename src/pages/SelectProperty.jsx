@@ -1,7 +1,23 @@
 import PropertyCard from "../components/PropertyCard";
 import Step from "../components/Step";
+import { fetchAllProperties } from "../apis/property";
+import { useEffect, useState } from "react";
 
 const SelectProperty = ({ user, count }) => {
+  const [property, setProperty] = useState([]);
+
+  useEffect(() => {
+    const getProperty = async () => {
+      try {
+        const items = await fetchAllProperties();
+        setProperty(items.data.listings);
+      } catch (err) {
+        console.error("불러오기 실패", err);
+      }
+    };
+    getProperty();
+  }, []);
+
   return (
     <>
       <div className="flex justify-between m-[20px] px-[50px]">
@@ -15,17 +31,19 @@ const SelectProperty = ({ user, count }) => {
       </div>
 
       {/*카드 컴포넌트 스크롤 */}
-      <div className="relative h-full mb-[50px]">
+      <div>
         <div
           id="cardSlider"
           className="flex overflow-x-auto scroll-smooth gap-[30px] px-[50px] scrollbar-hide"
         >
-          <>
-            <PropertyCard name="마포" />
-            <PropertyCard name="상수" />
-            <PropertyCard name="연남" />
-            <PropertyCard name="망원" />
-          </>
+          {property.map((items) => (
+            <PropertyCard
+              description={items.description}
+              deposits={items.deposits}
+              mRent={items.monthlyRent}
+              id={items.id}
+            />
+          ))}
         </div>
       </div>
 
@@ -34,7 +52,7 @@ const SelectProperty = ({ user, count }) => {
         onClick={() => {
           document.getElementById("cardSlider").scrollLeft -= 300;
         }}
-        className="absolute top-[40%] left-2 -translate-y-1/2 p-2 w-[50px] h-[50px]"
+        className="absolute top-[60%] left-2 -translate-y-1/2 p-2 w-[50px] h-[50px]"
       >
         <img
           src="../src/assets/angle-left.svg"
@@ -47,7 +65,7 @@ const SelectProperty = ({ user, count }) => {
         onClick={() => {
           document.getElementById("cardSlider").scrollLeft += 300;
         }}
-        className="absolute top-1/2 right-2 -translate-y-1/2 p-2  w-[50px] h-[50px]"
+        className="absolute top-[60%] right-2 -translate-y-1/2 p-2  w-[50px] h-[50px]"
       >
         <img
           src="../src/assets/angle-right.svg"
