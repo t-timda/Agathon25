@@ -7,7 +7,7 @@ import Introduction from './pages/Introduction.jsx'
 import Announcement from './pages/Announcement.jsx'
 import MapoNews from './pages/MapoNews.jsx'
 import MyPage from './pages/MyPage.jsx'
-import KakaoRedirect from './pages/KakaoRedirect.jsx';
+import KakaoRedirect from './pages/KakaoRedirect';
 import PropertyDetail from "./pages/PropertyDetail.jsx";
 import Benefits from './pages/Benefits.jsx';
 import ContractGuide from './pages/ContractGuide.jsx';

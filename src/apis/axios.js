@@ -1,15 +1,15 @@
 import axios from 'axios';
 import { useAuthStore } from '../stores/useAuthStore';
 
-const axiosInstance = axios.create({
-    baseURL: 'https://my-po.store/',
+const instance = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
 // 요청 인터셉터
-axiosInstance.interceptors.request.use(
+instance.interceptors.request.use(
   (config) => {
     const { accessToken } = useAuthStore.getState();
     if (accessToken) {
@@ -21,7 +21,7 @@ axiosInstance.interceptors.request.use(
 );
 
 // 응답 인터셉터
-axiosInstance.interceptors.response.use(
+instance.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
@@ -32,4 +32,4 @@ axiosInstance.interceptors.response.use(
   }
 );
 
-export default axiosInstance;
+export default instance;
