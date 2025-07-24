@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useAuthStore } from '../stores/useAuthStore';
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:8080/api',
+    baseURL: 'https://my-po.store/',
   headers: {
     'Content-Type': 'application/json',
   },
