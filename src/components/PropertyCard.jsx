@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
-const PropertyCard = ({ name, description, deposits, mRent }) => {
+const PropertyCard = ({ name, description, deposits, mRent, id }) => {
   const nav = useNavigate();
   const handleClick = () => {
-    nav("/propertydeatil");
+    nav(`/propertydeatil/:${id}`);
   };
 
   return (

@@ -1,7 +1,6 @@
 import PropertyCard from "../components/PropertyCard";
 import Step from "../components/Step";
 import { fetchAllProperties } from "../apis/property";
-import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const SelectProperty = ({ user, count }) => {
@@ -42,6 +41,7 @@ const SelectProperty = ({ user, count }) => {
               description={items.description}
               deposits={items.deposits}
               mRent={items.monthlyRent}
+              id={items.id}
             />
           ))}
         </div>

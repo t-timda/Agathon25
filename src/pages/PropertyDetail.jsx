@@ -1,9 +1,24 @@
 import Step from "../components/Step";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
+import { fetchAllProperties } from "../apis/property";
+import { useEffect, useState } from "react";
 
 const PropertyDetail = ({ id, user }) => {
   const nav = useNavigate();
+  const [property, setProperty] = useState([]);
+
+  useEffect(() => {
+    const getProperty = async () => {
+      try {
+        const items = await fetchAllProperties();
+        setProperty(items.data.listings);
+      } catch (err) {
+        console.error("불러오기 실패", err);
+      }
+    };
+    getProperty();
+  }, []);
 
   return (
     <div className=" m-[20px] px-[50px]">
