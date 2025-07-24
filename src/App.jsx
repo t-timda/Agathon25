@@ -7,7 +7,7 @@ import Introduction from './pages/Introduction.jsx'
 import Announcement from './pages/Announcement.jsx'
 import MapoNews from './pages/MapoNews.jsx'
 import MyPage from './pages/MyPage.jsx'
-
+import KakaoRedirect from './pages/KakaoRedirect.jsx';
 function App() {
   return (
     <Routes>
@@ -19,6 +19,7 @@ function App() {
         <Route path="/Announcement" element={<Announcement />} />
         <Route path="/MapoNews" element={<MapoNews />} />
         <Route path="/MyPage" element={<MyPage />} />
+        <Route path="/auth/callback" element={<KakaoRedirect />} />
       </Route>
     </Routes>
   );
