@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className="w-full h-16 flex justify-between items-center px-10 bg-sky-400 text-white shadow-md fixed top-0 left-0 right-0 z-50">
       <span className="text-2xl font-bold tracking-tight text-white">
-        웹 제목
+        MyPo
       </span>
       <span
         onClick={() => navigate('/main')}
