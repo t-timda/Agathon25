@@ -34,7 +34,7 @@ const SelectProperty = ({ user, count }) => {
         onClick={() => {
           document.getElementById("cardSlider").scrollLeft -= 300;
         }}
-        className="absolute top-[40%] left-2 -translate-y-1/2 p-2 w-[50px] h-[50px]"
+        className="absolute top-[60%] left-2 -translate-y-1/2 p-2 w-[50px] h-[50px]"
       >
         <img
           src="../src/assets/angle-left.svg"
@@ -47,7 +47,7 @@ const SelectProperty = ({ user, count }) => {
         onClick={() => {
           document.getElementById("cardSlider").scrollLeft += 300;
         }}
-        className="absolute top-1/2 right-2 -translate-y-1/2 p-2  w-[50px] h-[50px]"
+        className="absolute top-[60%] right-2 -translate-y-1/2 p-2  w-[50px] h-[50px]"
       >
         <img
           src="../src/assets/angle-right.svg"
