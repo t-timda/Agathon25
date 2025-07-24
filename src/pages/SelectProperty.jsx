@@ -1,12 +1,12 @@
 import PropertyCard from "../components/PropertyCard";
 import Step from "../components/Step";
 
-const SelectProperty = () => {
+const SelectProperty = ({ user, count }) => {
   return (
     <>
       <div className="flex justify-between m-[20px] px-[50px]">
         <div className="text-[36px] font-bold">
-          홍익님의 조건에 맞는 4건의 매물
+          {user}님의 조건에 맞는 {count}건의 매물
         </div>
 
         <div>
